@@ -7,6 +7,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<header style="background-color: #333; color: #fff; padding: 10px 0; text-align: center;">
+    <nav>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: center;">
+        <li style="margin: 0 15px;">
+          <a href="#home" style="color: #fff; text-decoration: none; font-size: 18px; transition: color 0.3s;">Inicio</a>
+        </li>
+        <li style="margin: 0 15px;">
+          <a href="#about" style="color: #fff; text-decoration: none; font-size: 18px; transition: color 0.3s;">Acerca de</a>
+        </li>
+        <li style="margin: 0 15px;">
+          <a href="#services" style="color: #fff; text-decoration: none; font-size: 18px; transition: color 0.3s;">Servicios</a>
+        </li>
+        <li style="margin: 0 15px;">
+          <a href="#contact" style="color: #fff; text-decoration: none; font-size: 18px; transition: color 0.3s;">Contacto</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 <?php
 include('php/db.php');
 
@@ -51,7 +69,6 @@ if ($fecha) {
             .then(response => response.json())
             .then(data => {
                 document.getElementById('disponibilidad').innerText = data.mensaje;
-                // Ya no bloqueamos el botón de envío, permitimos que se envíe siempre
                 if (data.disponible) {
                     document.getElementById('horario_id').value = data.horario_id;
                 } else {
@@ -73,10 +90,8 @@ if ($fecha) {
         });
 
         document.getElementById('form-horario').addEventListener('submit', function(e) {
-            // Ya no hay validación, el formulario se enviará aunque no se haya seleccionado un horario
             const horarioId = document.getElementById('horario_id').value;
             if (!horarioId) {
-                // No bloqueamos el envío, solo advertimos si es necesario
                 console.log('El horario no está disponible, pero el formulario se enviará.');
             }
         });

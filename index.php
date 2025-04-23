@@ -18,6 +18,24 @@ if (!isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva de Fecha</title>
     <link rel="stylesheet" href="css/style.css">
+    <header style="background-color: #333; color: #fff; padding: 10px 0; text-align: center;">
+    <nav>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: center;">
+        <li style="margin: 0 15px;">
+          <a href="#home" style="color: #fff; text-decoration: none; font-size: 18px; transition: color 0.3s;">Inicio</a>
+        </li>
+        <li style="margin: 0 15px;">
+          <a href="#about" style="color: #fff; text-decoration: none; font-size: 18px; transition: color 0.3s;">Acerca de</a>
+        </li>
+        <li style="margin: 0 15px;">
+          <a href="#services" style="color: #fff; text-decoration: none; font-size: 18px; transition: color 0.3s;">Servicios</a>
+        </li>
+        <li style="margin: 0 15px;">
+          <a href="#contact" style="color: #fff; text-decoration: none; font-size: 18px; transition: color 0.3s;">Contacto</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
     <script>
         function checkDisponibilidad() {
             const fecha = document.getElementById("fecha").value;
